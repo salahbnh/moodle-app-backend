@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 
 import userRoutes from './routes/userRoute.js';
+import examRoutes from './routes/examRoute.js'
 
 // Create an Express application
 const app = express();
@@ -29,6 +30,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 app.use('/api', userRoutes);
+app.use('/api', examRoutes);
 
 
 // Connect to MongoDB
@@ -41,4 +43,3 @@ mongoose.connect(process.env.MONGODB_KEY)
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-// moodleapp-85930

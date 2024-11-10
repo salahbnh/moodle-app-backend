@@ -32,6 +32,10 @@ const userSchema = new mongoose.Schema({
     required: false,
     default: '', // Can be a URL or file path
   },
+  phone:{
+    type: String,
+    required: false,
+  }
 }, { 
   timestamps: true // Automatically creates createdAt and updatedAt fields
 });
