@@ -10,6 +10,11 @@ import webinarRoutes from "./routes/webinarRoutes.js";
 import registrationRoutes from "./routes/registrationRoutes.js";
 import examRoutes from './routes/examRoute.js'
 
+
+import forumPostRoutes from './routes/forumPostRoutes.js';
+import forumResponseRoutes from './routes/forumResponseRoutes.js';
+import forumAccueilRoutes from './routes/forumAccueilRoutes.js  '
+
 // Create an Express application
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -41,6 +46,12 @@ app.use("/api/resume", resumeRoute);
 app.use('/api', examRoutes);
 app.use("/api", webinarRoutes);
 app.use("/api", registrationRoutes);
+app.use('/api/forumpost', forumPostRoutes);
+app.use('/api/forumresponse', forumResponseRoutes);
+app.use('/api/forum', forumAccueilRoutes);
+
+
+
 
 mongoose
   .connect(MONGODB_KEY)
