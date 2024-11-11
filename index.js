@@ -8,12 +8,11 @@ import resumeRoute from "./routes/resumeRoute.js";
 import userRoutes from "./routes/userRoute.js";
 import webinarRoutes from "./routes/webinarRoutes.js";
 import registrationRoutes from "./routes/registrationRoutes.js";
-import examRoutes from './routes/examRoute.js'
+import examRoutes from "./routes/examRoute.js";
 
-
-import forumPostRoutes from './routes/forumPostRoutes.js';
-import forumResponseRoutes from './routes/forumResponseRoutes.js';
-import forumAccueilRoutes from './routes/forumAccueilRoutes.js  '
+import forumPostRoutes from "./routes/forumPostRoutes.js";
+import forumResponseRoutes from "./routes/forumResponseRoutes.js";
+import forumAccueilRoutes from "./routes/forumAccueilRoutes.js  ";
 
 // Create an Express application
 const app = express();
@@ -43,15 +42,12 @@ app.use(express.static("public"));
 
 app.use("/api/user", userRoutes);
 app.use("/api/resume", resumeRoute);
-app.use('/api', examRoutes);
+app.use("/api", examRoutes);
 app.use("/api", webinarRoutes);
-app.use("/api", registrationRoutes);
-app.use('/api/forumpost', forumPostRoutes);
-app.use('/api/forumresponse', forumResponseRoutes);
-app.use('/api/forum', forumAccueilRoutes);
-
-
-
+app.use("/api/registration", registrationRoutes);
+app.use("/api/forumpost", forumPostRoutes);
+app.use("/api/forumresponse", forumResponseRoutes);
+app.use("/api/forum", forumAccueilRoutes);
 
 mongoose
   .connect(MONGODB_KEY)
@@ -62,4 +58,3 @@ mongoose
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
