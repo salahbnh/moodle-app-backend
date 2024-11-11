@@ -38,7 +38,6 @@ app.use(express.static("public"));
 app.use("/api/user", userRoutes);
 app.use("/api/resume", resumeRoute);
 
-app.use("/api", userRoutes);
 app.use("/api", webinarRoutes);
 app.use("/api", registrationRoutes);
 
