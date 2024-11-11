@@ -8,6 +8,7 @@ import resumeRoute from "./routes/resumeRoute.js";
 import userRoutes from "./routes/userRoute.js";
 import webinarRoutes from "./routes/webinarRoutes.js";
 import registrationRoutes from "./routes/registrationRoutes.js";
+import examRoutes from './routes/examRoute.js'
 
 // Create an Express application
 const app = express();
@@ -37,7 +38,7 @@ app.use(express.static("public"));
 
 app.use("/api/user", userRoutes);
 app.use("/api/resume", resumeRoute);
-
+app.use('/api', examRoutes);
 app.use("/api", webinarRoutes);
 app.use("/api", registrationRoutes);
 
@@ -50,4 +51,4 @@ mongoose
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-// moodleapp-85930
+

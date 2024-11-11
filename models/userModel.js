@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
   },
   institution: {
     type: String,
-    required: true,
+    required: false,
   },
   role: {
     type: String,
@@ -32,6 +32,10 @@ const userSchema = new mongoose.Schema({
     required: false,
     default: '', // Can be a URL or file path
   },
+  phone:{
+    type: String,
+    required: false,
+  }
 }, { 
   timestamps: true // Automatically creates createdAt and updatedAt fields
 });
