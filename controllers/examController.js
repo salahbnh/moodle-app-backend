@@ -23,6 +23,7 @@ export const createExam = async (req, res) => {
     const exam = await Exam.create(examData);
     res.status(201).json({ exam });
   } catch (error) {
+    console.error(error);
     res.status(500).json({ message: 'Error creating exam', error });
   }
 };
