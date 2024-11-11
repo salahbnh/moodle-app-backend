@@ -7,6 +7,6 @@ import {
 const router = express.Router();
 
 router.get("/:webinarId/:userId", checkRegistration);
-router.post("/register/:webinarId", registerForWebinar);
+router.post("/register/:webinarId/:userId", registerForWebinar);
 
 export default router;
